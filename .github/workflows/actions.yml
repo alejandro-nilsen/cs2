@@ -12,6 +12,6 @@ jobs:
     steps: 
       - name: "Checkout del repositorio"
         uses: actions/checkout@v2
-      - name: listar archivos
+      - name: listar archivos ahora
         run: ls -la
        
