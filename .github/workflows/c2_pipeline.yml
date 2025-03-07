@@ -1,22 +1,17 @@
-name: flujoTrabajo1
-on: [push]  # Evento que dispara el flujo de trabajo
+name: workflow-services
 
-jobs:
-  prueba1:
+on:
+    push:
+        branches:
+            - main
+
+jobs: 
+  trabajo1: 
     runs-on: ubuntu-latest
-    steps:
-      - name: mensaje
-        run: echo "primera interaccion con git actions"
 
-      - name: Crear Archivo
-        run: touch alumnos.txt
-
-      - name: añade contenido al archivo - Nombre de Alumnos
-        run: |
-          echo "juan perez" >> alumnos.txt
-          echo "ana lopez" >> alumnos.txt
-          echo "pedro sanchez" >> alumnos.txt
-
-      - name: muestra contenido del archivo
-        run: cat alumnos.txt
-
+    steps: 
+      - name: "Checkout del repositorio"
+        uses: actions/checkout@v2
+      - name: listar archivos ahora
+        run: ls -la
+       
