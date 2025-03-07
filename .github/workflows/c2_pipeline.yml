@@ -3,7 +3,7 @@ name: workflow-services
 on:
     push:
         branches:
-            - main
+            - master
 
 jobs: 
   trabajo1: 
