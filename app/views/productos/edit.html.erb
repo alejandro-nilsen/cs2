@@ -1,0 +1,29 @@
+<h2>Editar Producto</h2>
+
+<%= form_with(model: @producto, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :nombre, "Nombre" %>
+    <%= f.text_field :nombre, id: "producto_nombre", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion, "Descripción" %>
+    <%= f.text_area :descripcion, id: "producto_descripcion", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :precio, "Precio" %>
+    <%= f.number_field :precio, id: "producto_precio", class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :stock, "Stock" %>
+    <%= f.number_field :stock, id: "producto_stock", class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Volver", productos_path, class: "btn btn-secondary" %>

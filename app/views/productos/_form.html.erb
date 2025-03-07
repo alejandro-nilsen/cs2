@@ -1,0 +1,25 @@
+<%= form_with(model: @producto, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :nombre, "Nombre" %>
+    <%= f.text_field :nombre, class: "form-control", id: "producto_nombre" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion, "Descripción" %>
+    <%= f.text_area :descripcion, class: "form-control", id: "producto_descripcion" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :precio, "Precio" %>
+    <%= f.number_field :precio, class: "form-control", id: "producto_precio" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :stock, "Stock" %>
+    <%= f.number_field :stock, class: "form-control", id: "producto_stock" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-primary", id: "boton_guardar", disabled: true %>
+  </div>
+<% end %>
