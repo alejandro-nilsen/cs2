@@ -1,0 +1,31 @@
+
+
+name: services
+
+on:
+    push:
+        branches:
+            - master
+
+jobs: 
+  trabajo1: 
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+
+      python:
+        image: python:3.8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 5000:5000
+
+    steps: 
+      - name: "Checkout del repositorio"
+        uses: actions/checkout@v2
